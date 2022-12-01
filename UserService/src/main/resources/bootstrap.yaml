@@ -1,0 +1,32 @@
+server:
+  port: 1236
+  
+spring:
+  application:
+    name: UserService
+  cloud:
+    consul:  
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefixes: configuration
+        defaultContext: application
+        watch:
+          enabled: false
+          
+  sleuth:
+    sampler:
+      probability: 1
+  
+          
+  zipkin:
+    service:
+      name: UserService
+          
+resilience4j.circuitbreaker:
+    instances: 
+      UserService:
+        register-health-indicator: true
+        
+ 

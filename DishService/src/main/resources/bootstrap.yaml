@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: DishService
+  cloud:
+    consul:  
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefixes: configuration
+        defaultContext: application
+        watch:
+          enabled: false

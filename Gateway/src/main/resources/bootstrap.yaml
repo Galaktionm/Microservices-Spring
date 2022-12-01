@@ -1,0 +1,40 @@
+server:
+  port: 1256
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: Gateway
+  cloud:
+    consul:  
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefixes: configuration
+        defaultContext: application
+        watch:
+          enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          
+  sleuth:
+    sampler:
+      probability: 1
+  
+          
+  zipkin:
+    service:
+      name: Gateway
+          
+      
+    
+    
+      
+        
+         
+       
+          

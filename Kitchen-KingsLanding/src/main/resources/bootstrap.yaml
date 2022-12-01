@@ -1,0 +1,16 @@
+server:
+  port: 1235
+  
+spring:
+  application:
+    name: KitchenService
+  cloud:
+    consul:  
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefixes: configuration
+        defaultContext: application
+        watch:
+          enabled: false
